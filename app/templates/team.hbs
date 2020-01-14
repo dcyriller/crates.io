@@ -1,42 +1,50 @@
-<div id='crates-heading' data-test-heading>
+<div id="crates-heading" data-test-heading>
   <div class="wide">
-    <div class='info'>
+    <div class="info">
       <UserAvatar @user={{this.model.team}} @size="medium" data-test-avatar />
-      <div class='team-info'>
+      <div class="team-info">
         <h1 data-test-org-name>
-          {{ this.model.team.org_name }}
+          {{this.model.team.org_name}}
         </h1>
         <h2 data-test-team-name>
-          {{ this.model.team.name }}
+          {{this.model.team.name}}
         </h2>
       </div>
       <UserLink @user={{this.model.team}} data-test-github-link>
-        <img alt="GitHub profile" title="GitHub profile" src="/assets/GitHub-Mark.svg">
+        <img alt="GitHub profile" title="GitHub profile" src="/assets/GitHub-Mark.svg" />
       </UserLink>
     </div>
   </div>
 </div>
 
-<div id='user-profile'>
-  <div class='info'>
+<div id="user-profile">
+  <div class="info">
     {{! TODO: reduce duplication with templates/crates.hbs }}
 
-    <div id='results'>
-      <div class='nav'>
-        <span class='amt small'>
+    <div id="results">
+      <div class="nav">
+        <span class="amt small">
           Displaying
-          <span class='cur'>{{ this.currentPageStart }}-{{ this.currentPageEnd }}</span>
-          of <span class='total'>{{ this.totalItems }}</span> total results
+          <span class="cur">
+            {{this.currentPageStart}}-{{this.currentPageEnd}}
+          </span>
+          of
+          <span class="total">
+            {{this.totalItems}}
+          </span>
+          total results
         </span>
       </div>
 
-      <div class='sort'>
-        <span class='small'>Sort by</span>
+      <div class="sort">
+        <span class="small">
+          Sort by
+        </span>
         <RlDropdownContainer class="dropdown-container">
           <RlDropdownToggle @tagName="a" class="dropdown">
             {{svg-jar "sort"}}
-            {{ this.currentSortBy }}
-            <span class='arrow'></span>
+            {{this.currentSortBy}}
+            <span class="arrow"></span>
           </RlDropdownToggle>
 
           <RlDropdown @tagName="ul" class="dropdown">
@@ -65,7 +73,7 @@
       </div>
     </div>
 
-    <div id='crates' class='white-rows'>
+    <div id="crates" class="white-rows">
       {{#each this.model.crates as |crate|}}
         <CrateRow @crate={{crate}} />
       {{/each}}

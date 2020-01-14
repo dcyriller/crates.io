@@ -2,8 +2,10 @@
   {{#each @keywords as |keyword|}}
     <li>
       <LinkTo @route="keyword" @model={{keyword}} class="name">
-        <span>{{ keyword.id }} ({{ format-num keyword.crates_cnt }})</span>
-        <div class='arrow-in-list'>
+        <span>
+          {{keyword.id}} ({{format-num keyword.crates_cnt}})
+        </span>
+        <div class="arrow-in-list">
           {{svg-jar "right-arrow"}}
         </div>
       </LinkTo>

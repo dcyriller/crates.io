@@ -2,10 +2,10 @@
   {{#each @crates as |crate|}}
     <li>
       <LinkTo @route="crate" @model={{crate.id}} class="name">
-        {{ crate.name }} ({{ crate.max_version }})
-        <div class='right'>
+        {{crate.name}} ({{crate.max_version}})
+        <div class="right">
           {{svg-jar "download-clear-back"}}
-          {{ format-num crate.downloads }}
+          {{format-num crate.downloads}}
         </div>
       </LinkTo>
     </li>
